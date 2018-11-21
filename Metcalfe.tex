@@ -1,5 +1,6 @@
 \documentclass[12pt, a4page]{article}
 
+\usepackage{amssymb}
 %\usepackage[backend=biber, defernumbers=true]{biblatex}
 %\addbibresource{biblio.bib}
 
@@ -36,6 +37,20 @@ In a network, often nodes are normal people: in a finished time, not all value c
 This means that a person has no time to communicate with and may not receives all communications from the whole net.
 The term \textit{saturation} is used to mean that a person can not exchange the maximum value with the net due to the mole of information that receives.
 In addition, not all communications have the same value: user is covered with information, for the most useless, that can not manage.
+
+\section{Math Section[We will modify the title] We will add images later too}
+We start with the Sarnoff's rule, which is pretty simple. It states that the value of a broadcast network is linearly proportional to it's users, so basically if we have $n$ users we will have the value growth is $V \cdot n$ where $V$ is the value of a connection. A simple example would be a radio or companies like Netflix.
+\newline IMAGE \newline
+\textit{Proof} : The proof is trivial since we have n users connected to single node which is considered to be the streamer. Assume every connection has value $V$ then we will just sum $V$ $n$-times obtaining value is $\sum_{i=1}^{n} V = V \cdot n$ \hfill $\square$
+\newline
+\newline
+Next is Metcalfe's Law, which states that the growth rate is proportional to the square of number of users.\newline
+\textit{Proof} : The idea is similar to the Sarnoff's law: fix one of the n nodes we can see that using Sarnoff's law (or common sense) we have $n-1$ connection
+IMAGE \newline
+assuming that every connection has value $V$ we have that from the first node we are gaining $V \cdot (n - 1)$ value, now fix a second node we obtain again $n-1$ connections but remember that we have already considered the connection with the first node so we have $n-2$ connections,\newline
+IMAGE \newline
+thus we generate $V \cdot (n - 2)$ value so proceeding this way and summing all the values we have that the total value is a $\sum_{i=1}^{n-1} V \cdot i = V \cdot \sum_{i=1}^{n-1} i = V \frac{n(n-1)}{2} \propto \frac{V}{2} n^2$  \hfill $\square$
+\newline IMAGE \newline
 
 
 %\newpage
