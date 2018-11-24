@@ -52,6 +52,14 @@ IMAGE \newline
 thus we generate $V \cdot (n - 2)$ value so proceeding this way and summing all the values we have that the total value is a $\sum_{i=1}^{n-1} V \cdot i = V \cdot \sum_{i=1}^{n-1} i = V \frac{n(n-1)}{2} \propto \frac{V}{2} n^2$  \hfill $\square$
 \newline IMAGE \newline
 
+Now we try to prove a general formula, not assuming that every connection has the same value and n is large enough otherwise as we said Metcalfe's Law is the optimal solution, which is a strong hypothesis and cannot be satisfied if the number of users a very high simply because we cannot one of them to all, for example if we were to have only 10 users on a social media then most probably all of them will connect between themselves without "discrimination" but if we were to have millions of users, without using some algorithm to extrapolate value out of them, we cannot have that these millions (it would be $\propto$ million$^2$ using Metcalfe's law) of connection will have the same value, but since the human behavior on a large scale is similar, just see the Big Data mindset, we might use the following generalization:
+fix a user and sort the other user on the value of connection and call the values $V_1$ for the first connection, $V_2$ for second, ... , $V_{n-1}$ for the last one.
+\newline IMAGE \newline
+Since we assumed this to be true for every user, we have that the total value of network is, like before since we are trying to find the proportionality we can take the connection 2 times, $\propto n \cdot \sum_{i=1}^{n-1} V_n$, we can see if we have $V_{n-1}=...=V_2=V_1$ the Metcalfe hypothesis we have the $ \sum_{i=1}^{n-1} V_n = n\cdot V$ thus the network value is $\propto V \cdot n^2$ which was the Metcalfe's Law.
+Now we can see that the network value us based on the series $\sum V_i$ if number of users $n$ is big enough, so the series converges we will have that the value connection is linear, if it diverges we will need to study the asymptotic behavior of the series.
+%I need here to use the harmonic series & prove Reed's Law and criticize it.
+%We will add the IMAGES later bcoz I don't know if we can do it on github
+
 
 %\newpage
 %\printbibliography[type=article]
