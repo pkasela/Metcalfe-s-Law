@@ -1,8 +1,9 @@
 \documentclass[12pt, a4page]{article}
 
+
 \usepackage{amssymb}
-%\usepackage[backend=biber, defernumbers=true]{biblatex}
-%\addbibresource{biblio.bib}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{biblio.bib}
 
 \title{Metcalfe's Law}
 \date{}
@@ -11,34 +12,9 @@
 \begin{document}
 \maketitle
 
-\part*{Socio-Economic Interpretation.}
-The formula of Metcalfe's Law presupposes that each node is linked with the whole net and all connections have the same importance.
-Those presuppositions are considered too strong, so new mathematical laws have been presented; but empirical studies have demonstrated the veracity of Metcalfe's Law in social networks. \newline
-Presuppositions of Metcalfe's Law are not satisfied even when its veracity is demonstrated; however, in a social environment other presuppositions are to be considered: user's behaviour and user's \textit{saturation}; moreover, algorithms used to improve links quality and the possibility for people to aggregate may be enough to make the value of the whole network increase according to a quadratic function $n^2$. \newline
-In general, all laws that try to estimate the value as a function of the number of nodes do not consider that the network in made by people connected, and so human behaviour must be considered. \newline
-
-Estimating the value of a net is important in an economic contest: costs and earnings are the base of any business. Costs are not considered just in terms of money, but also as resources needed to run the business, like server's disk space and computational power.
-Decisions concerning the server depends on the costs of the network; and since it is necessary to run the business, estimation can not be lower than real costs: the service risks to be interrupted and the value of the network drastically decreases to zero. \newline
-
-\section{Economic Evaluation of a Net.}
-In general, to a company, nets are not the product but just a distribution channel: in this case, the net can be evaluated according to earnings coming from it; in this case the model is just linear.
-This is just a simple and empirical way to estimate a value, but works for big companies that offer a payment service. \newline
-A generalization of this criterion is to calculate the sum of value exchanged between each nodes; this can be easily done in e-commerce sites or for a transport net. \newline%\footfullcite{Weinman}.
-
-Metcalfe's Law is necessary when no or small data are available, so the value can not be known and can be just estimate.
-This is the case of advertisement selling: the value of the space is not known, but companies have to accord a price according to the distribution that the advert may have in the network. \newline
- 
-Estimating the value is important when balance-sheet is compiled or budget is calculated. In addiction, according to Italian's Law, the balance-sheet must be \textit{prudent}, so costs can not be under-estimated.
-With this in mind, Metcalfe's Law is correctly adopted: if costs follow a $o(n^2)$ model, laws would not be not broken; in fact, it is empirically demonstrated that costs of a social media follows this law.
-Using the same criterion, if no data are available, earnings are not well estimated: is more prudent using a lower formula, like $n \cdot \log{n}$. \newline
-
-\section{Net saturation.}
-In a network, often nodes are normal people: in a finished time, not all value can be extracted.
-This means that a person has no time to communicate with and may not receives all communications from the whole net.
-The term \textit{saturation} is used to mean that a person can not exchange the maximum value with the net due to the mole of information that receives.
-In addition, not all communications have the same value: user is covered with information, for the most useless, that can not manage.
-
-\section{Math Section[We will modify the title] We will add images later too}
+\part*{Math Section.}
+% we will modify the title
+% we will add images later too
 We start with the Sarnoff's rule, which is pretty simple. It states that the value of a broadcast network is linearly proportional to it's users, so basically if we have $n$ users we will have the value growth is $V \cdot n$ where $V$ is the value of a connection. A simple example would be a radio or companies like Netflix.
 \newline IMAGE \newline
 \textit{Proof} : The proof is trivial since we have n users connected to single node which is considered to be the streamer. Assume every connection has value $V$ then we will just sum $V$ $n$-times obtaining value is $\sum_{i=1}^{n} V = V \cdot n$ \hfill $\square$
@@ -61,7 +37,54 @@ Now we can see that the network value us based on the series $\sum V_i$ if numbe
 %We will add the IMAGES later bcoz I don't know if we can do it on github
 
 
-%\newpage
-%\printbibliography[type=article]
+\newpage
+\part*{Socio-Economic Interpretation.}
+Metcalfe's Law assumes that each node is linked with the whole net and all connections have the same importance.
+Those assumptions are considered too strong, so new mathematical laws have been presented; but empirical studies have demonstrated the veracity of Metcalfe's Law in popular social networks\cite{Metcalfe}\cite{Wechat} even if premises of are not satisfied.
+However, in a social environment the human nature of nodes must be considered; moreover, algorithms used to improve connections quality and the possibility given by the platform to \textit{share} contents may be enough to make the value of the whole network increase according to a quadratic function $n^2$. \newline
+
+Estimating the value of a net is important in an economic contest: costs and earnings are the base of any business. Costs are not considered just in terms of money, but also as resources needed to run the business, like server's disk space and computational power.
+Decisions concerning the server depends on the costs of the whole network; and since it is necessary to run the business, estimation can not be lower than real costs: the service risks to be interrupted and the value of the network drastically decreases to zero. \newline
+
+\section{A real case: Facebook.}
+Facebook, the biggest network in the world owned by a public company, is demonstrated to have a value proportional to the square of active users\cite{Metcalfe}\cite{Wechat}.
+But assumptions of Metcalfe's Law are apparently not satisfied due to the limit to the number of \textit{friends} that a single person can have and the fact that users do select their contacts according to various strategies\cite{Socialmedia}. \newline
+
+However, this is not a problem, because Facebook's algorithm and the possibility to \textit{share} contents make links between people that apparently are not connected: the exchange of value is imposed by Facebook, even without user's consent.
+According to Pasquali\cite{Socialmedia}, Facebook is not a single network, but an aggregate of small (social) networks that exist also offline and a big (informatic) net composed by the aggregate of all users.
+While small social networks are not interesting in this study, the fact that users can interact with the whole Facebook is fundamental.
+Users, in fact, can \textit{share} contents, so that they can reach more nodes (\textit{friends of friends} or \textit{public pages}), or, in particular cases, a \textit{post} can become \textit{viral}.
+In addiction to this, Facebook's algorithm minds the creation of new links, suggesting new contents that is sure to be liked by the user or suggesting new people or pages.
+
+The value exchanged through Facebook's network is maximized by the algorithm: not all information are presented to the user, but they are filtered according to personal interests.
+The unique experience during the \textit{flow} of feeds can cause dependency: the time spent on the platform, the facility of access and the quality (or targeting) of contents are so high that saturation is not easily reach. \newline
+
+\section{Economic Evaluation of a Net.}
+In general, networks are not the product of the business but just the distribution channel: in this case, the net can be evaluated equal to earnings coming from it; in this case the model is just linear.
+This is just a simple and empirical way to estimate a value, but works even for big companies that offer a payment service. \newline
+A generalization of this criterion is to calculate the sum of value exchanged between each node; this can be easily done in e-commerce sites or for a transport nets\cite{Weinman}
+. \newline
+
+Metcalfe's Law is necessary when no or small data are available, so the value can not be known and can be just estimate.
+This is the case of advertisement selling: the value of the space is not known, but companies have to define a price according to the distribution that the advert may have in the network. \newline
+
+Estimating the value is important when balance-sheet is compiled or budget is calculated. In addiction, according to Italian's Law, the balance-sheet must be \textit{prudent}, so costs can not be under-estimated.
+With this in mind, Metcalfe's Law is correctly adopted: if costs follow a $o(n^2)$ model, law would not be broken; in fact, it is empirically demonstrated\cite{Wechat} that costs of a social media follows this law.
+Using the same criterion, if no data are available, earnings are not well estimated: is more prudent using a lower formula, like $n \cdot \log{n}$. \newline
+
+\section{Net saturation.}
+In a network, nodes are often normal people: in a finished time not all the value transmitted can be extracted.
+This means that a person has no time to communicate with and may not receives all communications from the whole network.
+The term \textit{saturation} is used to mean that a person can not exchange the maximum value with all other nodes due to the mole of information that receives.
+In addition, not all communications have the same value: user is covered with information, for the most useless, that can not manage. \newline
+To maximize the value that a network can transfer, filters of any type are used: from simple spam filters, to automatize the check of emails, to server algorithms that suggest new actions and connections.
+In this way, the value of links increases due to the growth of information that the user can manage. \newline
+
+\section{Conclusions.}
+The value of a network is not easily estimable: in general, the value is inferior to $n^2$ presented by Metcalfe, but with some tricks is possible to a net to reach the maximum value.
+In particular, Facebook's network, due to its possibility to \textit{share} contents and a sophisticated algorithm that uses tons of information about each user, can be evaluated according to Metcalfe's Law; but this mathematical function is not always valid, even in social environment, due to human nature: social networks are not so inter-connected, and a informatic infrastructure mirrors the offline world. 
+And more in general, other laws, of minor magnitude, are empirically and successfully used.
+\newpage
+\printbibliography
 
 \end{document}
