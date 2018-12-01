@@ -11,8 +11,10 @@
 
 \begin{document}
 \maketitle
+\part*{Introduction}
+%later we will add and modify the abstract.
 
-\part*{Math Section.}
+\part*{Math Section}
 % we will modify the title
 % we will add images later too
 We start with the Sarnoff's rule, which is pretty simple. It states that the value of a broadcast network is linearly proportional to it's users, so basically if we have $n$ users we will have the value growth is $V \cdot n$ where $V$ is the value of a connection. A simple example would be a radio or companies like Netflix.
@@ -28,14 +30,15 @@ IMAGE \newline
 thus we generate $V \cdot (n - 2)$ value so proceeding this way and summing all the values we have that the total value is a $\sum_{i=1}^{n-1} V \cdot i = V \cdot \sum_{i=1}^{n-1} i = V \frac{n(n-1)}{2} \propto \frac{V}{2} n^2$  \hfill $\square$
 \newline IMAGE \newline
 
-Now we try to prove a general formula, not assuming that every connection has the same value and n is large enough otherwise as we said Metcalfe's Law is the optimal solution, which is a strong hypothesis and cannot be satisfied if the number of users a very high simply because we cannot one of them to all, for example if we were to have only 10 users on a social media then most probably all of them will connect between themselves without "discrimination" but if we were to have millions of users, without using some algorithm to extrapolate value out of them, we cannot have that these millions (it would be $\propto$ million$^2$ using Metcalfe's law) of connection will have the same value. Since the human behavior on a large scale is similar, just see the Big Data mindset, we might use the following generalization:
+Now we try to prove a general formula, not assuming that every connection has the same value and n is large enough otherwise as we said Metcalfe's Law is the optimal solution, which is a strong hypothesis and cannot be satisfied if the number of users a very high simply because we cannot connect one of them to all, for example if we were to have only 10 users on a social media then most probably all of them will connect between themselves without "discrimination" but if we were to have millions of users, without using some algorithm to extrapolate value out of them, we cannot have that these millions (it would be $\propto$ million$^2$ using Metcalfe's law) of connection will have the same value, it's not only a time restriction but a space restriction too. Since the human behavior on a large scale is similar, just see the Big Data mindset, we might use the following generalization:
 fix a user and sort the other user on the value of connection and call the values $V_1$ for the first connection, $V_2$ for second, ... , $V_{n-1}$ for the last one.
 \newline IMAGE \newline
 Since we assumed this to be true for every user, we have that the total value of network is, like before since we are trying to find the proportionality we can take the connection 2 times, $\propto n \cdot \sum_{i=1}^{n-1} V_n$, we can see if we have $V_{n-1}=...=V_2=V_1$ the Metcalfe hypothesis we have the $ \sum_{i=1}^{n-1} V_n = n\cdot V$ thus the network value is $\propto V \cdot n^2$ which was the Metcalfe's Law.
 Now we can see that the network value us based on the series $\sum V_i$ if number of users $n$ is big enough, so the series converges we will have that the value connection is linear, if it diverges we will need to study the asymptotic behavior of the series.
-%I need here to use the harmonic series & prove Reed's Law and criticize it.
-%We will add the IMAGES later bcoz I don't know if we can do it on github
-
+We see, surprisingly, that Sarnoff's law is not only valid for broadcast networks but can be true also for fully connected network.\newline
+One hypothesis that we can make is the Odlyzko's one, that the values of connection drops harmonically, in our case assume $V_1 = V$, due to this assumption we will have $V_2 = V/2, V_3 = V/3$ and so on, so the series will be $\sum_{i=1}^n V/i$, we know that for n large enough we have that $\sum_i^n 1/i \sim \log n$, so we have that the series is $\sim V \log n$, thus the value is $\propto n \log n$.\newline
+We showed 3 different values of the value for the connection so which one is the right one? There is a big difference between $n, n\log n, n^2$ we can say that this three represent a pessimistic, average and optimistic growth of a network.
+%no need for reed's law will put only in the presentation
 
 \newpage
 \part*{Socio-Economic Interpretation.}
