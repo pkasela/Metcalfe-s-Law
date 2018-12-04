@@ -23,7 +23,7 @@ blablabla
 We start with the Sarnoff's rule, which is pretty simple.
 It states that the value of a broadcast network is linearly proportional to it's users, so basically if we have $n$ users we will have that the value growth is $V \cdot n$ (where $V$ is the value of a connection).
 A simple example would be a radio or companies like Netflix.
-\newline IMAGE \newline
+\newline IMAGE1 \newline
 %perchè qui sotto non usiamo \paragraph{Proof} ?
 \textit{Proof} : The proof is trivial since we have $n$ users connected to single node, which is considered to be the streamer.
 Assume every connection has value $V$ then we will just sum $V$ $n$-times obtaining a value of $\sum_{i=1}^{n} V = V \cdot n$ \hfill $\square$
@@ -32,11 +32,11 @@ Assume every connection has value $V$ then we will just sum $V$ $n$-times obtain
 
 Next is Metcalfe's Law, which states that the growth rate is proportional to the square of number of users.\newline
 \textit{Proof} : The idea is similar to the Sarnoff's law: fixing one of the $n$ nodes, we can see that using Sarnoff's law (or common sense) we have $n-1$ connections.
-IMAGE \newline
+IMAGE2 \newline
 Assuming that every connection has the same value $V$, we have that from the first node we are gaining $V \cdot (n - 1)$ value; now, fixing a second node, we obtain again $n-1$ connections; but remember that we have already considered the connection with the first node, so we have $n-2$ connections, thus we generate $V \cdot (n - 2)$ value. \newline
-IMAGE \newline
+IMAGE3 \newline
 So, proceeding this way and summing all the values, we have that the total value is $\sum_{i=1}^{n-1} V \cdot i = V \cdot \sum_{i=1}^{n-1} i = V \frac{n(n-1)}{2} \propto \frac{V}{2} n^2$  \hfill $\square$
-\newline IMAGE \newline
+\newline IMAGE4 \newline
 
 Now we try to prove a general formula, not % mi suona un po' male "not assuming" (whitout assuming?) in inglese, rivedere
 assuming that every connection has the same value and assuming that $n$ is large enough; otherwise, as we said, % "as we said": non mi pare sia detto sopra; sarà inserito nell'abstract?
@@ -44,7 +44,7 @@ the optimal solution is Metcalfe's Law, which has a strong hypothesis and cannot
 For example if we % non dovrebbe essere "if we had only..." ?
 were to have only 10 users on a social media then most probably all of them will connect between themselves without discrimination; but if we were to have millions of users, without using some algorithm to extrapolate value out of them, we cannot have that these millions (it would be $\propto$ million$^2$ using Metcalfe's law) of connection will have the same value: it's not only a time restriction but a space restriction too. Since the human behavior on a large scale is similar, just see the Big Data mindset, we might use the following generalization:
 fix a user, sort the others on the value of connection and call the values $V_1$ for the first connection, $V_2$ for second, ... , $V_{n-1}$ for the last one.
-\newline IMAGE \newline
+\newline
 % da qui alla fine della parte non mi sembra spiegato molto chiaramente: rivedere un attimo
 Since we assumed this to be true for every user, we have that the total value of network is, like before since we are trying to find the proportionality we can take the connection 2 times, $\propto n \cdot \sum_{i=1}^{n-1} V_n$, we can see if we have $V_{n-1}=...=V_2=V_1$ the Metcalfe hypothesis we have the $ \sum_{i=1}^{n-1} V_n = n\cdot V$ thus the network value is $\propto V \cdot n^2$ which was the Metcalfe's Law.
 Now we can see that the network value us based on the series $\sum V_i$ if number of users $n$ is big enough, so the series converges we will have that the value connection is linear, if it diverges we will need to study the asymptotic behavior of the series.
