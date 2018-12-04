@@ -9,6 +9,7 @@
 \date{}
 \author{Pranav Kasela, Federico Moiraghi}
 
+\usepackage{graphicx}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -23,7 +24,14 @@ blablabla
 We start with the Sarnoff's rule, which is pretty simple.
 It states that the value of a broadcast network is linearly proportional to it's users, so basically if we have $n$ users we will have that the value growth is $V \cdot n$ (where $V$ is the value of a connection).
 A simple example would be a radio or companies like Netflix.
-\newline IMAGE1 \newline
+\newline
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=1.00]{IMAGE1.jpg}
+\caption{didascalia immagine 1}
+\label{IMAGE1}
+\end{figure}
+\newline
 %perchè qui sotto non usiamo \paragraph{Proof} ?
 \textit{Proof} : The proof is trivial since we have $n$ users connected to single node, which is considered to be the streamer.
 Assume every connection has value $V$ then we will just sum $V$ $n$-times obtaining a value of $\sum_{i=1}^{n} V = V \cdot n$ \hfill $\square$
@@ -32,11 +40,26 @@ Assume every connection has value $V$ then we will just sum $V$ $n$-times obtain
 
 Next is Metcalfe's Law, which states that the growth rate is proportional to the square of number of users.\newline
 \textit{Proof} : The idea is similar to the Sarnoff's law: fixing one of the $n$ nodes, we can see that using Sarnoff's law (or common sense) we have $n-1$ connections.
-IMAGE2 \newline
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=1.00]{IMAGE2.jpg}
+\caption{didascalia immagine 2}
+\label{IMAGE2}
+\end{figure} \newline
 Assuming that every connection has the same value $V$, we have that from the first node we are gaining $V \cdot (n - 1)$ value; now, fixing a second node, we obtain again $n-1$ connections; but remember that we have already considered the connection with the first node, so we have $n-2$ connections, thus we generate $V \cdot (n - 2)$ value. \newline
-IMAGE3 \newline
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=1.00]{IMAGE3.jpg}
+\caption{didascalia immagine 3}
+\label{IMAGE3}
+\end{figure} \newline
 So, proceeding this way and summing all the values, we have that the total value is $\sum_{i=1}^{n-1} V \cdot i = V \cdot \sum_{i=1}^{n-1} i = V \frac{n(n-1)}{2} \propto \frac{V}{2} n^2$  \hfill $\square$
-\newline IMAGE4 \newline
+\newline \begin{figure}[htp]
+\centering
+\includegraphics[scale=1.00]{IMAGE4.jpg}
+\caption{didascalia immagine 4}
+\label{IMAGE4}
+\end{figure} \newline
 
 Now we try to prove a general formula, not % mi suona un po' male "not assuming" (whitout assuming?) in inglese, rivedere
 assuming that every connection has the same value and assuming that $n$ is large enough; otherwise, as we said, % "as we said": non mi pare sia detto sopra; sarà inserito nell'abstract?
