@@ -13,11 +13,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-blablabla
 %later we will add and modify the abstract.
-\end{abstract}
-\newpage
-
 Sarnoff was an American businessman and a pioneer of the radio and television, he is credited with the Sarnoff’s law, which states that the value of a broadcast system grows linearly with the number of users.
 Robert Metcalfe born in 1946 is an electrical engineer, applied mathematician, computer scientist and businessman, he is the co-founder of Ethernet together with David Boggs.\newline
 Sarnoff’s law was the base of the Metcalfe’s law which states that in the case of Ethernet the growth is quadratic with the linear growth of users. The law was formulated by George Glider in 1993 after a discussion with Metcalfe. This law which is mathematically correct but has some strong hypothesis for business applications. \newline
@@ -25,9 +21,9 @@ Reed’s law states that the utility of large network grows exponentially with t
 Both these law’s have been criticized by a MIT mathematician, Andrew Odlyzko who states that both Reed and Metcalfe overstates the growth of internet since the don’t take in account the human tendency to saturate the number of connections they make with others using the Dunbar’s number. He empirically states due to different analogies that the growth should be $n\cdot \log n$ for n very large and states that Metcalfe’s law is valid only for small network (small $n$). We will explain Odlyzko’s hypothesis and generalize Metcalfe’s law using the mathematical series concept.\newline
 We will prove the law stated above and their economical implications and explain in which case they have a real evidence.
 \newpage
+\end{abstract}
 
-
-\part*{Math Section}
+\part*{Math Proofs}
 % we will modify the title
 % we will add images later too
 We start with the Sarnoff's rule, which is pretty simple.
@@ -37,11 +33,12 @@ A simple example would be a radio or companies like Netflix.
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=1.00]{IMAGE1.jpg}
-\caption{didascalia immagine 1}
+\caption{Red is the broadcaster, green are the users.}
 \label{IMAGE1}
 \end{figure}
 \newline
-%perchè qui sotto non usiamo \paragraph{Proof} ?
+%perchè qui sotto non usiamo \paragraph{Proof} ? 
+%Si poteva anche usare quello :'D, ma in matematica alcuni preferiscono scrivere il teorema in grassetto e proof in corsivo solo per quello.
 \textit{Proof} : The proof is trivial since we have $n$ users connected to single node, which is considered to be the streamer.
 Assume every connection has value $V$ then we will just sum $V$ $n$-times obtaining a value of $\sum_{i=1}^{n} V = V \cdot n$ \hfill $\square$
 \newline
@@ -52,35 +49,34 @@ Next is Metcalfe's Law, which states that the growth rate is proportional to the
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=1.00]{IMAGE2.jpg}
-\caption{didascalia immagine 2}
+\caption{we are connecting the yellow node to the greens.}
 \label{IMAGE2}
 \end{figure} \newline
 Assuming that every connection has the same value $V$, we have that from the first node we are gaining $V \cdot (n - 1)$ value; now, fixing a second node, we obtain again $n-1$ connections; but remember that we have already considered the connection with the first node, so we have $n-2$ connections, thus we generate $V \cdot (n - 2)$ value. \newline
 \begin{figure}[htp]
 \centering
-\includegraphics[scale=1.00]{IMAGE3.jpg}
-\caption{didascalia immagine 3}
+%ridotto la scala altrimenti la figura andava giu e non volevo forzarla con !
+\includegraphics[scale=0.95]{IMAGE3.jpg}
+\caption{we can see that connecting the yellow we are doubling the dashed yellow connection to the red node, so we need to remove it in our calculations.}
 \label{IMAGE3}
 \end{figure} \newline
 So, proceeding this way and summing all the values, we have that the total value is $\sum_{i=1}^{n-1} V \cdot i = V \cdot \sum_{i=1}^{n-1} i = V \frac{n(n-1)}{2} \propto \frac{V}{2} n^2$  \hfill $\square$
 \newline \begin{figure}[htp]
 \centering
 \includegraphics[scale=1.00]{IMAGE4.jpg}
-\caption{didascalia immagine 4}
+\caption{A totally connected network with n=4}
 \label{IMAGE4}
 \end{figure} \newline
 
-Now we try to prove a general formula, not % mi suona un po' male "not assuming" (whitout assuming?) in inglese, rivedere
-assuming that every connection has the same value and assuming that $n$ is large enough; otherwise, as we said, % "as we said": non mi pare sia detto sopra; sarà inserito nell'abstract?
-the optimal solution is Metcalfe's Law, which has a strong hypothesis and cannot be satisfied if the number of users is very high simply because we cannot connect one of them to all others.
-For example if we % non dovrebbe essere "if we had only..." ?
-were to have only 10 users on a social media then most probably all of them will connect between themselves without discrimination; but if we were to have millions of users, without using some algorithm to extrapolate value out of them, we cannot have that these millions (it would be $\propto$ million$^2$ using Metcalfe's law) of connection will have the same value: it's not only a time restriction but a space restriction too. Since the human behavior on a large scale is similar, just see the Big Data mindset, we might use the following generalization:
+Now we try to prove a general formula, without assuming that every connection has the same value and assuming that $n$ is large enough; otherwise the optimal solution is Metcalfe's Law, which has a strong hypothesis and cannot be satisfied if the number of users is very high simply because we cannot connect one of them to all others.
+For example if we had only 10 users on a social media then most probably all of them will connect between themselves without discrimination; but if we were to have millions of users, without using some algorithm to extrapolate value out of them, we cannot have that these millions (it would be $\propto$ million$^2$ using Metcalfe's law) of connection will have the same value: it's not only a time restriction but a space restriction too. Since the human behavior on a large scale is similar, just see the Big Data mindset, we might use the following generalization:
 fix a user, sort the others on the value of connection and call the values $V_1$ for the first connection, $V_2$ for second, ... , $V_{n-1}$ for the last one.
 \newline
 % da qui alla fine della parte non mi sembra spiegato molto chiaramente: rivedere un attimo
-Since we assumed this to be true for every user, we have that the total value of network is, like before since we are trying to find the proportionality we can take the connection 2 times, $\propto n \cdot \sum_{i=1}^{n-1} V_n$, we can see if we have $V_{n-1}=...=V_2=V_1$ the Metcalfe hypothesis we have the $ \sum_{i=1}^{n-1} V_n = n\cdot V$ thus the network value is $\propto V \cdot n^2$ which was the Metcalfe's Law.
-Now we can see that the network value us based on the series $\sum V_i$ if number of users $n$ is big enough, so the series converges we will have that the value connection is linear, if it diverges we will need to study the asymptotic behavior of the series.
-We see, surprisingly, that Sarnoff's law is not only valid for broadcast networks but can be true also for fully connected network.\newline
+%prova adesso e dimmi se non capisci lo stesso
+Since we assumed this to be true for every user, we have that the total value of network is $\propto n \cdot \sum_{i=1}^{n-1} V_n$. We can see if we have $V_{n-1}=...=V_2=V_1$ the Metcalfe hypothesis we have the $ \sum_{i=1}^{n-1} V_n = n\cdot V$ thus the network value is $\propto V \cdot n^2$ which was the Metcalfe's Law.
+The network value is based on the series $\sum V_i$ if number of users $n$ is big enough, so if the series converges we will have that the value connection is linear, if it diverges we will need to study the asymptotic behavior of the series.
+Surprisingly, Sarnoff's law is not only valid for broadcast networks but can be true also for fully connected network.\newline
 One hypothesis that we can make is the Odlyzko's one, that the values of connection drops harmonically, in our case assume $V_1 = V$, due to this assumption we will have $V_2 = V/2, V_3 = V/3$ and so on, so the series will be $\sum_{i=1}^n V/i$, we know that for n large enough we have that $\sum_i^n 1/i \sim \log n$, so we have that the series is $\sim V \log n$, thus the value is $\propto n \log n$ (see \cite{Odlyzko_Law}).\newline
 We showed 3 different values of the value for the connection so which one is the right one? There is a big difference between $n, n\log n, n^2$ we can say that this three represent a pessimistic, average and optimistic growth of a network.
 %no need for reed's law will put only in the presentation
