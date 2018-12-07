@@ -16,9 +16,9 @@
 %later we will add and modify the abstract.
 Sarnoff was an American businessman and a pioneer of the radio and television, he is credited with the Sarnoff’s law, which states that the value of a broadcast system grows linearly with the number of users.
 Robert Metcalfe born in 1946 is an electrical engineer, applied mathematician, computer scientist and businessman, he is the co-founder of Ethernet together with David Boggs.\newline
-Sarnoff’s law was the base of the Metcalfe’s law which states that in the case of Ethernet the growth is quadratic with the linear growth of users. The law was formulated by George Glider in 1993 after a discussion with Metcalfe. This law which is mathematically correct but has some strong hypothesis for business applications. \newline
+Sarnoff’s law was the base of the Metcalfe’s law which states that in the case of Ethernet the growth is quadratic with the linear growth of users. The law was formulated by George Glider in 1993 after a discussion with Metcalfe. This law is mathematically correct but has some strong hypothesis for business applications. \newline
 Reed’s law states that the utility of large network grows exponentially with the size of network $2^n$, which is more than the number of users ($n$) and the possible pair of connection ($n^2$).
-Both these law’s have been criticized by a MIT mathematician, Andrew Odlyzko who states that both Reed and Metcalfe overstates the growth of internet since the don’t take in account the human tendency to saturate the number of connections they make with others using the Dunbar’s number. He empirically states due to different analogies that the growth should be $n\cdot \log n$ for n very large and states that Metcalfe’s law is valid only for small network (small $n$). We will explain Odlyzko’s hypothesis and generalize Metcalfe’s law using the mathematical series concept.\newline
+Both these law’s have been criticized by a MIT mathematician, Andrew Odlyzko, who states that both Reed and Metcalfe overstates the growth of internet since they don’t take in account the human tendency to saturate the number of connections they make with others using the Dunbar’s number. He empirically states due to different analogies that the growth should be $n\cdot \log n$ for n very large and states that Metcalfe’s law is valid only for small network (small $n$). We will explain Odlyzko’s hypothesis and generalize Metcalfe’s law using the mathematical series concept.\newline
 We will prove the law stated above and their economical implications and explain in which case they have a real evidence.
 \newpage
 \end{abstract}
@@ -39,6 +39,7 @@ A simple example would be a radio or companies like Netflix.
 \newline
 %perchè qui sotto non usiamo \paragraph{Proof} ? 
 %Si poteva anche usare quello :'D, ma in matematica alcuni preferiscono scrivere il teorema in grassetto e proof in corsivo solo per quello.
+%chiaro :) fortuna che ci sei te matematico
 \textit{Proof} : The proof is trivial since we have $n$ users connected to single node, which is considered to be the streamer.
 Assume every connection has value $V$ then we will just sum $V$ $n$-times obtaining a value of $\sum_{i=1}^{n} V = V \cdot n$ \hfill $\square$
 \newline
@@ -74,6 +75,7 @@ fix a user, sort the others on the value of connection and call the values $V_1$
 \newline
 % da qui alla fine della parte non mi sembra spiegato molto chiaramente: rivedere un attimo
 %prova adesso e dimmi se non capisci lo stesso
+%molto più chiaro così :) *pollice in su*
 Since we assumed this to be true for every user, we have that the total value of network is $\propto n \cdot \sum_{i=1}^{n-1} V_n$. We can see if we have $V_{n-1}=...=V_2=V_1$ the Metcalfe hypothesis we have the $ \sum_{i=1}^{n-1} V_n = n\cdot V$ thus the network value is $\propto V \cdot n^2$ which was the Metcalfe's Law.
 The network value is based on the series $\sum V_i$ if number of users $n$ is big enough, so if the series converges we will have that the value connection is linear, if it diverges we will need to study the asymptotic behavior of the series.
 Surprisingly, Sarnoff's law is not only valid for broadcast networks but can be true also for fully connected network.\newline
