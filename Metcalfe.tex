@@ -174,7 +174,22 @@ simplifying the constants:
 $$ V = C_a C_b^{(C_c t)^{C_d t}} $$
 Which is a double exponential function. The constants can be calculated with the empirical data and assuming to know that the human race can to $2\cdot 10^{26}$ calculation we can compute the time when the machines will surpass the human power calculation, this event is called "singularity" by Kurzweil. \newline
 The Moore's Second Law (Rock's Law) states that the price of production and fabrication of a semiconductor doubles every 4 years, and the prices of the production transistors are increasing too. There might be a time where the production cost is too high to continue to invest into following Moore's Law so the Rock's Law and Moore's Law will eventually collide and at that point the we won't see an exponential growth of computations. \newline
-Kurzweil assumes the veracity of the Moore's Law, but as we just stated it is not easy for Moore's Law to stand until the so called "Singularity", the Moore's Law was initially projected only for one decade, it is considered a big deal that is it still valid today, one of the biggest motive is, as mentioned above, the fact that the industry is driven by this law, every major manufacturer of processors, try to create processors powerful enough to match Moore's expectations. Recently since the cost of production is also increasing, it has become even more difficult to follow Moore, so probably in a few years, either the Moore's Law will fall or we will need to correct it again. In any case this puts in great risk the veracity of Kurzweil singularity, but one this is sure, the technology is increasing rapidly, so we need to give a shape to the future, i.e. create ethical principles and new laws in order to maintain a certain order in this new possibly disruptive revolution and make sure that they are followed. Otherwise we will have not a singularity but a repetition of history, due to the new possibilities but the same old human fault of not prevent disasters and wait until they happen just to try and cure them.
+Kurzweil assumes the veracity of the Moore's Law, but as we just stated it is not easy for Moore's Law to stand until the so called "Singularity", the Moore's Law was initially projected only for one decade, it is considered a big deal that is it still valid today, one of the biggest motive is, as mentioned above, the fact that the industry is driven by this law, every major manufacturer of processors, try to create processors powerful enough to match Moore's expectations. Recently since the cost of production is also increasing, it has become even more difficult to follow Moore, so probably in a few years, either the Moore's Law will fall or we will need to correct it again. Another scenario is that the growth is temporary an exponential and later it will hit a ceiling (an asymptote) it the growth might stabilize at that point or it could change the behaviour after a certain point (it might become a linear function). For example the following the function is an example of what we mean with a local exponential function which has an oblique asymptote.
+\newline
+\begin{tikzpicture}
+    \begin{axis} [ 
+    %domain = -10:10
+    xmin=-10,xmax=10,
+    %ymin=-5, ymax = 5, 
+    xlabel=$x$,
+    ylabel={$ f(x)=1/(e^{-x} +1 ) $},
+    %axis lines = left
+    ] 
+    \addplot[smooth, color=blue,domain = -6:6]{ 1/(exp(-x)+1) + x/10};
+    \end{axis}
+\end{tikzpicture}
+\newline
+The possible behaviour we just proposed puts in great risk the veracity of Kurzweil singularity, but one this is sure, the technology is increasing rapidly, so we need to give a shape to the future, i.e. create ethical principles and new laws in order to maintain a certain order in this new possibly disruptive revolution and make sure that they are followed. Otherwise we will have not a singularity but a repetition of history, due to the new possibilities but the same old human fault of not prevent disasters and wait until they happen just to try and cure them.
 \newpage
 
 \printbibliography
