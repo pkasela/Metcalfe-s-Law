@@ -1,6 +1,6 @@
 \documentclass[12pt, a4page]{article}
 
-
+\usepackage{pgfplots}
 \usepackage{amssymb}
 \usepackage[backend=biber]{biblatex}
 \addbibresource{biblio.bib}
@@ -131,6 +131,52 @@ The value of a network is not easily estimable: in general, the value is inferio
 In particular, Facebook's network, due to its possibility to \textit{share} contents and a sophisticated algorithm that uses tons of information about each user, can be evaluated according to Metcalfe's Law; but this mathematical function is not always valid, even in social environment, due to human nature: social networks are not so inter-connected, and a informatic infrastructure mirrors the offline world. 
 And more in general, other laws, of minor magnitude, are empirically and successfully used.
 \newpage
+
+\part*{The L growth of the world?}
+In the past years the technology has been advancing really fast, for example the Moore's Law states that the number of transistors in a processor doubles every 18 months (it grows 60\% every year), while the Nielsen's Law states that the growth of the bandwidth is 50\% every year(doubling every 21 months)\cite{Floridi}.Actually it is not on a recent phenomena, if we were to see on a larger scale most of the technological growth has been on a exponential rate, but, as we can see on an exponential plot, the initial growth is pretty slow, in fact, we can approximate the exponential function near 0 with a linear function ($e^x = 1 + x + ...$ using the Taylor formula near 0) and before it we can observe how it's "flat", but after it starts rapidly increasing.
+\newline
+\begin{tikzpicture}
+    \begin{axis} [ 
+    xmin=-6,xmax=6,
+    %ymin=-1, ymax = 150, 
+    xlabel=$x$,
+    ylabel={$ f(x)=e^x $},
+    %axis lines = left
+    ] 
+    \addplot[smooth, color=blue]{ exp(x) };
+    \end{axis}
+\end{tikzpicture}
+\newline
+It's clear from the graph above that with L functions we mean a function that resembles the capital letter L. Usually all the functions above the quadratic function $n^2$ can be considered a L function. These kind of function is what any industry would like to achieve. The Moore's Law is widely accepted as a goal for the industry (this is one of the reason why Moore's Law is still valid today). These are usually empirical laws that predicts reality very precisely for a certain period and then at a certain point starts failing.\newline
+One law which has some mathematical foundation, but no empirical evidence is the Reed's Law which states that the complexity of a network where we can have sub-networks grows like $2^n$. \newline
+\textit{Proof:} It's fairly simple, all we need to know that given a set of n elements, the number of subgroups that we can have are the possible combination of k$<$n elements, which is $\sum_{k=1}^n {n \choose k} = 2^n -1$ \hfill $\square$ \newline 
+This law has no empirical evidence but is used in economical fields as a proof that a network creates  more value with more sub-networks. \newline
+We could add a lot of these L laws, Metcalfe's Law is one of them. Also the quantity of data we create is growing exponentially. All these vertical growth conducted Kurzweil \cite{Kurzweil} to think that all the worlds technology has been growing and will continue to grow exponentially. Here we show the simple mathematical model proposed by Ray Kurzweil in his report \cite{Kurzweil}\newline
+Let V be the velocity(power) of computing,\newline
+W the world knowledge,\newline
+t the time,\newline
+And let's assume that V = $C_1\cdot$W, so the computation is a linear function of knowledge. And that we have that knowledge is a cumulative: $$W=C_2\int_0^t V(y)dy$$
+Using these two hypothesis we have that:
+$$W = C_1 C_2 \int W$$ which has the solution
+$$W = C_1 C_2 C_3^{ C_4\cdot t} \quad \Rightarrow \quad V = C_1^2 C_2 C_3^{C_4\cdot t}$$
+simplifying the constants we have
+$$ V=C_a C_b ^{ C_c \cdot t} $$
+which could be considered as a form of Moore's Law. Now Kurzweil extends this model:\newline
+N = Expenditure for computation\newline
+V=$C_1\cdot$W (as before)\newline
+N = $C_4^{C_5\cdot t}$ (We assume that the expenditure for the computation is growing at an exponential rate) \newline
+W=$C_2 \int_0^t N\cdot V$\newline
+from here we derive easily that
+$$ W=C_1 C_2 \int_0^t C_4^{C_5 t} W  $$
+$$ W = C_1 C_2 C_3^{(C_6 t)^{C_7 t}} $$
+$$ V = C_1^2 C_2 C_3^{(C_6 t)^{C_7 t}}  $$
+simplifying the constants:
+$$ V = C_a C_b^{(C_c t)^{C_d t}} $$
+Which is a double exponential function. The constants can be calculated with the empirical data and assuming to know that the human race can to $2\cdot 10^{26}$ calculation we can compute the time when the machines will surpass the human power calculation, this event is called "singularity" by Kurzweil. \newline
+The Moore's Second Law (Rock's Law) states that the price of production and fabrication of a semiconductor doubles every 4 years, and the prices of the production transistors are increasing too. There might be a time where the production cost is too high to continue to invest into following Moore's Law so the Rock's Law and Moore's Law will eventually collide and at that point the we won't see an exponential growth of computations. \newline
+Kurzweil assumes the veracity of the Moore's Law, but as we just stated it is not easy for Moore's Law to stand until the so called "Singularity", the Moore's Law was initially projected only for one decade, it is considered a big deal that is it still valid today, one of the biggest motive is, as mentioned above, the fact that the industry is driven by this law, every major manufacturer of processors, try to create processors powerful enough to match Moore's expectations. Recently since the cost of production is also increasing, it has become even more difficult to follow Moore, so probably in a few years, either the Moore's Law will fall or we will need to correct it again. In any case this puts in great risk the veracity of Kurzweil singularity, but one this is sure, the technology is increasing rapidly, so we need to give a shape to the future, i.e. create ethical principles and new laws in order to maintain a certain order in this new possibly disruptive revolution and make sure that they are followed. Otherwise we will have not a singularity but a repetition of history, due to the new possibilities but the same old human fault of not prevent disasters and wait until they happen just to try and cure them.
+\newpage
+
 \printbibliography
 
 \end{document}
