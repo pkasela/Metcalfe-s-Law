@@ -1,0 +1,9 @@
+#files produced by LaTeX complilation
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.run.xml
+*.synctex.gz
+
